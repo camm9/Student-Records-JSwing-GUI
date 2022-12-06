@@ -53,12 +53,12 @@ public class StudentGUI extends JFrame {
 		});
 	}
 
-	public void setupComponents() {
+	public void setupComponents(ArrayList<Student> studentRecords) {
 		// Summon objects that will populate console
 	
 		Student student = new Student();
-		ArrayList<Student> studentRecords = new ArrayList<Student>();
-		studentRecords = student.readDB();
+//		ArrayList<Student> studentRecords = new ArrayList<Student>();
+//		studentRecords = student.readDB();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 655, 307);
@@ -163,11 +163,14 @@ public class StudentGUI extends JFrame {
 							String gradeUpdate = gradeComboBox.getSelectedItem().toString();
 							student.updateStudentRecords(cCodeUpdate, sIDUpdate, gradeUpdate);
 							// refresh GUI
-							contentPane.revalidate();
-							nameIDComboBox.revalidate();
-							courseList.revalidate();
-							gradeComboBox.revalidate();
-					
+							if (gradeUpdate.equals("NA")){
+								//nothing happens because NA grades can still be edited
+							}else {
+								gradeComboBox.setEnabled(false);
+								saveBtn.setEnabled(false);
+							}
+							
+
 							
 						}
 
@@ -205,7 +208,9 @@ public class StudentGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public StudentGUI() {
-		setupComponents();
+		Student student = new Student();
+		ArrayList<Student> studentRecords = student.readDB();
+		setupComponents(studentRecords);
 		createEvents();
 
 	}
