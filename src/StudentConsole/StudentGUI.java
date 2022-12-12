@@ -57,8 +57,7 @@ public class StudentGUI extends JFrame {
 		// Summon objects that will populate console
 	
 		Student student = new Student();
-//		ArrayList<Student> studentRecords = new ArrayList<Student>();
-//		studentRecords = student.readDB();
+
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 655, 307);
