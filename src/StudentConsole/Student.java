@@ -110,16 +110,6 @@ public class Student {
 		this.grade = grade;
 	}
 
-//	public Student(String sName, String sId, String cCode, String cTitle, String grade,
-//			Course course) {
-//		this.sName = sName;
-//		this.sID = sId;
-//		this.cCode = cCode;
-//		this.cTitle = cTitle;
-//		this.grade = grade;
-//		this.course = course;
-//		this.studentCoursesRecord.add(course);
-//	}
 
 	public Student() {
 		// TODO Auto-generated constructor stub
@@ -163,15 +153,6 @@ public class Student {
 
 				studentRecords.add(student);
 				student.studentCoursesRecord.add(newCourse);
-
-//					if current db entry's name matches the last entries name, then just add the new Course to the old entry
-//						if(dbName.equals(checkName)) {
-//							studentRecords.get(counter-1).studentCoursesRecord.add(newCourse);
-//						}
-//						else {
-//							studentRecords.add(student);
-//							counter++;
-//						}
 
 				checkName = dbName;
 			}
